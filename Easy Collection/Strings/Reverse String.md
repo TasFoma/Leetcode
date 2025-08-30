@@ -1,37 +1,66 @@
-Write a function that reverses a string. The input string is given as an array of characters s.
+# Reverse String
 
-You must do this by modifying the input array in-place with O(1) extra memory.
+[LeetCode Problem #344 - Reverse String](https://leetcode.com/problems/reverse-string/)
 
- 
+## Описание задачи
 
-Example 1:
+Write a function that flips a string.  
+The input string is represented as an array of `s` characters.  
+You need to do this by changing the input array in-place using O(1) additional memory.
 
-Input: s = ["h","e","l","l","o"]
-Output: ["o","l","l","e","h"]
-Example 2:
+## Для тех, кто плохо знает английский
 
-Input: s = ["H","a","n","n","a","h"]
-Output: ["h","a","n","n","a","H"]
- 
+Написать функцию, которая переворачивает строку.  
+Входная строка представлена в виде массива символов `s`.  
+Необходимо сделать это, изменяя входной массив на месте (in-place) с использованием O(1) дополнительной памяти.
 
-Constraints:
+## Примеры
 
-1 <= s.length <= 105
-s[i] is a printable ascii character.
+**Пример 1:**  
+Ввод: `s = ["h", "e", "l", "l", "o"]`  
+Вывод: `["o", "l", "l", "e", "h"]`
 
-The solution to the problem:
+**Пример 2:**  
+Ввод: `s = ["H", "a", "n", "n", "a", "h"]`  
+Вывод: `["h", "a", "n", "n", "a", "H"]`
+
+## Ограничения
+
+- \(1 \leq s.length \leq 10^5\)
+- Каждый элемент массива `s[i]` — печатаемый ASCII символ.
+
+## Решение на C#
+``` 
 public class Solution {
-    public void ReverseString(char[] s) {
-        int left = 0;
-        int right = s.Length - 1;
+  public void ReverseString(char[] s) {
+   int left = 0;
+   int right = s.Length - 1;
+   while (left < right) {
+        char temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
 
-        while (left < right) {
-            char temp = s[left];
-            s[left] = s[right];
-            s[right] = temp;
-
-            left++;
-            right--;
-        }
+        left++;
+        right--;
     }
+ }
 }
+```
+
+## Объяснение решения
+
+Данное решение использует подход с двумя указателями:  
+- Указатель `left` начинает с начала массива,  
+- Указатель `right` — с конца массива.  
+Мы меняем местами элементы, на которые указывают `left` и `right`, двигая указатели к центру, пока они не встретятся.  
+Это позволяет перевернуть массив **на месте** без использования дополнительной памяти.
+
+## Сложность алгоритма
+
+- Временная сложность: \(O(n)\), где \(n\) — длина массива `s`, т.к. мы обходим массив один раз.  
+- Пространственная сложность: \(O(1)\), используется только несколько переменных для обмена.
+
+---
+
+*Решение демонстрирует алгоритм с двумя указателями, который является классическим примером эффективного изменения массива in-place.*
+ 
