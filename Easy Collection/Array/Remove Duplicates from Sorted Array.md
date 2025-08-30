@@ -1,59 +1,44 @@
-Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+# Remove Duplicates from Sorted Array
 
-Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+[LeetCode Problem #26](https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/879/)
 
-Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
-Return k.
-Custom Judge:
+## Описание задачи
+A non-decreasing array of `nums' is given. Remove duplicates so that each unique element occurs only once. 
+The relative order of the elements must be preserved. Return the number of unique elements `k`.
 
-The judge will test your solution with the following code:
+Modify the `nums' array so that the first `k` elements contain unique elements.
 
-int[] nums = [...]; // Input array
-int[] expectedNums = [...]; // The expected answer with correct length
+## Перевод для тех, кто плохо знает английский:
+Дан отсортированный по неубыванию массив `nums`. Удалите дубликаты так, чтобы каждый уникальный элемент встречался только один раз. 
+Относительный порядок элементов должен сохраниться. Верните количество уникальных элементов `k`.
 
-int k = removeDuplicates(nums); // Calls your implementation
+Измените массив `nums` так, чтобы первые `k` элементов содержали уникальные элементы.
 
-assert k == expectedNums.length;
-for (int i = 0; i < k; i++) {
-    assert nums[i] == expectedNums[i];
-}
-If all assertions pass, then your solution will be accepted.
+## Пример
+**Ввод:** `nums = [1,1,2]`  
+**Вывод:** `2, nums = [1,2,_]`  
 
- 
-
-Example 1:
-
-Input: nums = [1,1,2]
-Output: 2, nums = [1,2,_]
-Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
-It does not matter what you leave beyond the returned k (hence they are underscores).
-Example 2:
-
-Input: nums = [0,0,1,1,1,2,2,3,3,4]
-Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
-Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
-It does not matter what you leave beyond the returned k (hence they are underscores).
- 
-
-Constraints:
-
-1 <= nums.length <= 3 * 104
--100 <= nums[i] <= 100
-nums is sorted in non-decreasing order.
-
-The solution to the problem:
+## Решение на C#
 public class Solution {
-    public int RemoveDuplicates(int[] nums) {
-        if (nums.Length == 0) return 0;
-        
-        int k = 0; // points to the last unique element
-        for (int i = 1; i < nums.Length; i++) {
-            if (nums[i] != nums[k]) {
-                k++;
-                nums[k] = nums[i];
-            }
-        }
-        return k + 1; // number of unique elements
-    }
+public int RemoveDuplicates(int[] nums) {
+if (nums.Length == 0) return 0;
+int k = 0;
+for (int i = 1; i < nums.Length; i++) {
+if (nums[i] != nums[k]) {
+k++;
+nums[k] = nums[i];
+}
+}
+return k + 1;
+}
 }
 
+text
+
+## Сложность
+- Временная: O(n) — один проход по массиву  
+- Пространственная: O(1) — изменение массива выполняется in-place  
+
+---
+
+*Задача решена с использованием двух указателей и модификации входного массива без дополнительных структур данных.*
