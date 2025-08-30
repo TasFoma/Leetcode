@@ -1,6 +1,6 @@
 # Remove Duplicates from Sorted Array
 
-[LeetCode Problem #26](https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/879/)
+[LeetCode Problem Array](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/)
 
 ## Описание задачи
 A non-decreasing array of `nums' is given. Remove duplicates so that each unique element occurs only once. 
@@ -40,6 +40,7 @@ return k + 1;
 ---
 
 *Задача решена с использованием двух указателей и модификации входного массива без дополнительных структур данных.*
+
 
 
 
