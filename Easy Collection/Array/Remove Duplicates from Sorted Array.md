@@ -19,7 +19,7 @@ Modify the `nums' array so that the first `k` elements contain unique elements.
 **Вывод:** `2, nums = [1,2,_]`  
 
 ## Решение на C#
-public class Solution {
+``` public class Solution {
 public int RemoveDuplicates(int[] nums) {
 if (nums.Length == 0) return 0;
 int k = 0;
@@ -31,7 +31,7 @@ nums[k] = nums[i];
 }
 return k + 1;
 }
-} 
+} ```
 
 ## Сложность
 - Временная: O(n) — один проход по массиву  
@@ -40,4 +40,5 @@ return k + 1;
 ---
 
 *Задача решена с использованием двух указателей и модификации входного массива без дополнительных структур данных.*
+
 
