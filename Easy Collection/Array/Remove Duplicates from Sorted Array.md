@@ -6,13 +6,7 @@
 A non-decreasing array of `nums' is given. Remove duplicates so that each unique element occurs only once. 
 The relative order of the elements must be preserved. Return the number of unique elements `k`.
 
-Modify the `nums' array so that the first `k` elements contain unique elements.
-
-## Перевод для тех, кто плохо знает английский:
-Дан отсортированный по неубыванию массив `nums`. Удалите дубликаты так, чтобы каждый уникальный элемент встречался только один раз. 
-Относительный порядок элементов должен сохраниться. Верните количество уникальных элементов `k`.
-
-Измените массив `nums` так, чтобы первые `k` элементов содержали уникальные элементы.
+Modify the `nums' array so that the first `k` elements contain unique elements. 
 
 ## Пример
 **Ввод:** `nums = [1,1,2]`  
@@ -34,16 +28,7 @@ public class Solution {
   }
 } 
 ```
-
-## Сложность
-- Временная: O(n) — один проход по массиву  
-- Пространственная: O(1) — изменение массива выполняется in-place  
-
----
-
-*Задача решена с использованием двух указателей и модификации входного массива без дополнительных структур данных.*
-
-
+ 
 
 
 
